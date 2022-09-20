@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-deployment
+  labels:
+    app: golang
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: golang
+  template:
+    metadata:
+      labels:
+        app: golang
+    spec:
+      containers:
+        - ports:
+            - containerPort: 8081
+          resources:
+            limits: {}
+            requests: {}
+          name: golang
+          image: 879170523286.dkr.ecr.ap-south-1.amazonaws.com/k8sdemo:69
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: golang-configmap
