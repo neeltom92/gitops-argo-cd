@@ -22,7 +22,7 @@ spec:
             limits: {}
             requests: {}
           name: golang
-          image: 87565656286.dkr.ecr.ap-south-1.amazonaws.com/k8sdemo:69
+          image: 87565656286.dkr.ecr.ap-south-1.amazonaws.com/k8sdemo:70
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
